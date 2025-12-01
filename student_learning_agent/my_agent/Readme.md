@@ -1,37 +1,54 @@
-# 🎓 Student Learning Agent – Capstone Project
+# 🎓 Student Learning Agent – AI-Powered Multi-Agent Study Assistant
 
-A smart, multi-agent student assistant built using **Google ADK**, **Gemini 2.5 Flash**, and custom tools.
-This project helps students learn better with planning, motivation, coding help, and personalized study routines.
-
----
-
-## 🚀 Features
-
-### 🧠 **1. Task Planner Agent**
-
-Creates a personalized daily or weekly study plan based on your goals and availability.
-
-### 💻 **2. Code Helper Agent**
-
-Explains code, fixes errors, and generates examples to support learning programming.
-
-### 💬 **3. Motivational Quotes Tool**
-
-Uses an online API to deliver fresh motivational messages during study sessions.
-
-### 📚 **4. Root Agent**
-
-The main controller that routes tasks to the correct sub-agent.
+A smart, multi-agent learning assistant built using **Google ADK**, **Gemini 2.5 Flash**, **FastAPI**, and a custom **frontend UI**.
+Designed to help students study smarter with **daily plans, coding help, and motivation** — all in one place.
 
 ---
 
-## 🔧 Tech Stack
+## 🌟 Features
 
-* **Google ADK**
-* **Gemini 2.5 Flash Model**
-* **Python 3.11+**
-* **Custom Tools (Motivation API)**
-* **Constitution-based multi-agent design**
+### 🧠 **Task Planner Agent**
+
+Creates simple and personalized **daily or weekly study plans** based on goals and time availability.
+
+### 💻 **Code Helper Agent**
+
+Explains code, fixes errors, and generates clean examples for beginner programmers.
+
+### 💬 **Motivation Tool**
+
+Fetches fresh motivational quotes from an external API to keep students focused and energized.
+
+### 🎯 **Root Agent (Controller)**
+
+Decides which sub-agent should answer based on the user prompt.
+
+### 🖥️ **Interactive Frontend (index.html)**
+
+A smooth, modern chat UI with:
+
+* Chat bubbles
+* Timestamps
+* Loading animation
+* Fully responsive design
+* FastAPI backend integration
+
+---
+
+## 🧩 Architecture Overview
+
+```
+Frontend (index.html)
+        ↓
+FastAPI Backend (chat endpoint)
+        ↓
+Root Agent – Google ADK
+ ├── Task Planner Agent
+ ├── Code Helper Agent
+ └── Motivation Tool (API)
+```
+
+Modular, extensible, and easy to maintain.
 
 ---
 
@@ -42,6 +59,7 @@ student_learning_agent/
 │── my_agent/
 │   │── agent.py
 │   │── __init__.py
+│── index.html
 │── constitution.json
 │── requirements.txt
 │── README.md
@@ -49,78 +67,77 @@ student_learning_agent/
 
 ---
 
-## ▶️ How to Run
+## 🚀 Getting Started
 
-1. Create a virtual environment:
+### 1️⃣ Create a virtual environment
 
-   ```
-   python -m venv .venv
-   ```
+```bash
+python -m venv .venv
+```
 
-2. Activate it:
-   **Windows:**
+### 2️⃣ Activate it
 
-   ```
-   .venv\Scripts\activate
-   ```
+**Windows:**
 
-3. Install packages:
+```bash
+.venv\Scripts\activate
+```
 
-   ```
-   pip install -r requirements.txt
-   ```
+### 3️⃣ Install dependencies
 
-4. Run the agent:
+```bash
+pip install -r requirements.txt
+```
 
-   ```
-   adk run my_agent
-   ```
+### 4️⃣ Run the ADK Agent
+
+```bash
+adk run my_agent
+```
+
+### 5️⃣ Start FastAPI Backend
+
+```bash
+uvicorn api_server:app --reload
+```
+
+### 6️⃣ Open Frontend
+
+Just open:
+
+```
+index.html
+```
 
 ---
 
-## 📦 Packaging for Submission
+## 🔌 Motivation Tool (API)
 
-Generate the submission zip:
-
-```
-adk package my_agent
-```
-
-This creates:
-
-```
-my_agent.zip
-```
-
-Submit this ZIP file.
-
----
-
-## 🛠 Tools Overview
-
-### **Motivation Tool**
-
-Fetches motivational quotes using:
+The Motivation Agent fetches quotes using:
 
 ```
 https://motivational-api.vercel.app/motivational
 ```
 
-Helps students stay focused through positive reinforcement.
+Used for quick mood boost during study sessions.
+
+## 🌱 Future Improvements
+
+If more time was available, I’d extend the system with:
+
+* Voice interaction (speech-to-text + TTS)
+* Flashcards + spaced repetition
+* Progress dashboard
+* PDF summarization agent
+* Mobile app version
+* Study streak tracking
+* Notebook-style markdown support
 
 ---
 
-## 🎯 Use Cases
-
-* Study planning
-* Coding error debugging
-* Daily motivation
-* Personalized learning companion
-
----
-
-## 🌟 Author
+## 👩‍💻 Author
 
 **Muskan Fatima**
 Frontend Developer | AI & Web Enthusiast
+
 
